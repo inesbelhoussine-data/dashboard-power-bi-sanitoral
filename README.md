@@ -1,199 +1,233 @@
-# 📊 Tableau de bord de pilotage de projets avec Power BI
 
-## 📌 Présentation
+# Sanitoral — Executive Reporting & Project Performance Analytics
 
-Ce projet a été réalisé dans le cadre de la formation **Data Analyst OpenClassrooms**.
+## Executive Summary
 
-L'objectif est de concevoir un **tableau de bord interactif sous Microsoft Power BI** permettant au service PMO de l'entreprise fictive **Sanitoral** de suivre l'avancement de ses projets, contrôler les coûts, identifier les retards et faciliter la prise de décision des directeurs.
+Conception d'une solution de Business Intelligence destinée
+à accompagner la direction générale, les directions régionales
+et les directions nationales dans le pilotage d'un portefeuille
+international de 104 projets IT et Marketing.
 
-Le tableau de bord est entièrement dynamique et peut être mis à jour automatiquement grâce à **Power Query**.
+Cette étude de cas réalisée dans le cadre de ma formation
+Data Analyst chez OpenClassrooms vise à transformer des données
+financières et opérationnelles en informations décisionnelles
+et recommandations stratégiques.
 
----
+## Key Business Findings
 
-## 🎯 Objectifs du projet
+| Indicateur | Résultat |
+|---|---:|
+| Projets analysés | 104 |
+| Projets IT | 52 |
+| Projets Marketing | 52 |
+| Régions internationales | 4 |
+| Projets en alerte | 76 |
+| Taux de projets en alerte | 73,1 % |
+| Budget prévisionnel | 56 108 000 |
+| Budget réel | 62 035 400 |
+| Dépassement budgétaire | 5 927 400 |
+| Écart budgétaire | +10,56 % |
+| Écart de durée cumulée | -13,43 % |
+| Écart de livrables | Environ -10,3 % |
 
-Le tableau de bord répond aux besoins suivants :
+## Business Challenge
 
-- Suivre l'avancement des projets.
-- Comparer les budgets prévus et réels.
-- Identifier rapidement les dépassements de budget.
-- Détecter les retards de réalisation.
-- Suivre les livrables.
-- Analyser les projets par pays, région et type de projet.
-- Faciliter la prise de décision grâce à des indicateurs clés (KPI).
+Sanitoral dispose de nombreuses données relatives à ses
+projets internationaux, mais ne bénéficie pas d'une vision
+centralisée permettant d'identifier rapidement les écarts
+de performance et de prioriser les interventions.
 
----
+Les enjeux sont les suivants :
 
-## 🛠️ Technologies utilisées
+- Maîtriser les dépenses et les dépassements budgétaires.
+- Identifier les projets présentant des risques.
+- Suivre le respect des délais et des engagements.
+- Évaluer la réalisation des livrables.
+- Faciliter les décisions de poursuite ou d'arrêt des projets.
+- Accompagner les directions dans leurs actions correctives.
 
-- Microsoft Power BI
+## Stakeholders & Decision Support
+
+### Direction générale
+
+- Pilotage global du portefeuille de projets.
+- Identification des écarts significatifs.
+- Arbitrage concernant la poursuite ou l'arrêt des projets.
+
+### Directions régionales
+
+- Analyse comparative des performances.
+- Identification des projets nécessitant une intervention.
+- Coordination avec les directions nationales.
+
+### Directions nationales
+
+- Analyse détaillée des projets.
+- Identification des causes de dérive.
+- Mise en œuvre de mesures correctives.
+
+## Analytical Approach
+
+### 1. Data Preparation — Power Query
+
+- Importation des différentes sources de données.
+- Nettoyage et transformation des données.
+- Harmonisation des types de variables.
+- Création d'une clé composite Project_Phase.
+- Préparation des données pour le reporting.
+
+### 2. Data Modeling
+
+Construction d'un modèle relationnel composé de sept tables
+de données :
+
+- Actual_Costs
+- Actual_Deliverable
+- Actual_Duration
+- Country_Profiles
+- Project type
+- Projects_Locations
+- Projects_plans
+
+Rapprochement des données réelles et prévisionnelles
+à l'échelle des projets et de leurs phases.
+
+### 3. KPI Development — DAX
+
+Création d'indicateurs permettant de mesurer :
+
+- Les coûts réels et prévisionnels.
+- Les écarts budgétaires.
+- Les durées réelles et prévisionnelles.
+- Les écarts de durée.
+- Les livrables réalisés et attendus.
+- Le nombre de projets en alerte.
+
+Le seuil d'alerte défini dans le cahier des charges
+est fixé à 15 % d'écart.
+
+### 4. Business Intelligence — Power BI
+
+Conception d'un reporting interactif permettant :
+
+- Le suivi global du portefeuille.
+- L'analyse détaillée des projets.
+- L'analyse géographique des investissements.
+- Le filtrage par région, pays et catégorie de projet.
+
+## Business Findings
+
+### Financial Performance
+
+Le portefeuille présente un budget réel de 62 035 400
+pour un budget prévisionnel de 56 108 000.
+
+Le dépassement global atteint 5 927 400,
+soit environ 10,56 % du budget initial.
+
+### Project Risk Management
+
+76 projets sur 104 sont identifiés comme étant en alerte,
+soit environ 73,1 % du portefeuille.
+
+Cette proportion souligne la nécessité de prioriser
+les interventions et d'investiguer les causes des écarts.
+
+### Operational Performance
+
+Les durées cumulées sont inférieures de 13,43 %
+aux prévisions.
+
+Cependant, environ 900 livrables de moins que prévu
+sont comptabilisés.
+
+Ces résultats nécessitent une analyse complémentaire
+afin de déterminer si les durées réduites correspondent
+à des gains d'efficacité, des changements de périmètre
+ou des livrables non réalisés.
+
+### Project-Level Analysis
+
+Le projet Marketing numéro 4, situé en Égypte,
+présente notamment :
+
+- Budget prévu : 750 000
+- Budget réel : 981 700
+- Surcoût : 231 700
+- Dépassement budgétaire : environ 31 %
+- Dépassement de durée : environ 95 %
+
+Ce projet constitue un exemple de situation nécessitant
+une revue financière et opérationnelle prioritaire.
+
+### Geographic Analysis
+
+Les budgets réels les plus élevés parmi les pays
+visibles dans le reporting concernent notamment :
+
+- Norvège : 3,4 millions
+- Allemagne : 3,3 millions
+- Belgique : 2,8 millions
+
+Ces résultats permettent d'identifier les zones
+concentrant des investissements importants.
+
+## Strategic Recommendations
+
+1. Prioriser les projets cumulant plusieurs écarts
+   défavorables.
+
+2. Analyser les causes des dépassements budgétaires.
+
+3. Renforcer le suivi des engagements et des livrables.
+
+4. Mettre en place des revues régulières de performance
+   avec les directions régionales et nationales.
+
+5. Adapter l'allocation des ressources en fonction
+   des risques et des priorités stratégiques.
+
+6. Vérifier la pertinence des seuils d'alerte
+   et distinguer les écarts favorables des écarts
+   défavorables.
+
+7. Approfondir l'analyse des projets présentant
+   simultanément des surcoûts et des retards.
+
+## Business Value
+
+La solution développée fournit un support décisionnel
+permettant de :
+
+- Centraliser les informations financières et opérationnelles.
+- Améliorer la visibilité sur les performances des projets.
+- Identifier les situations nécessitant une intervention.
+- Faciliter les arbitrages budgétaires.
+- Soutenir la coordination entre les niveaux de direction.
+
+Les bénéfices présentés correspondent aux usages
+potentiels de la solution et non à des gains financiers
+mesurés après déploiement.
+
+## Technical Stack
+
+- Power BI Desktop
 - Power Query
 - DAX
-- Excel
+- Data Modeling
+- Data Visualization
+- KPI Monitoring
+- Financial Analysis
+- Executive Reporting
 
----
+## Project Context
 
-## 📈 Contenu du tableau de bord
+Étude de cas professionnalisante réalisée dans le cadre
+de la certification Data Analyst OpenClassrooms.
 
-Le rapport est composé de quatre pages :
+## Author
 
-### 📄 Page 1 – Tableau de bord de pilotage
+Ines Belhoussine
 
-Vue d'ensemble du portefeuille de projets avec :
-
-- Nombre total de projets
-- Budget prévu
-- Budget réel
-- Écart budgétaire
-- Nombre de projets en alerte
-- Comparaison des budgets
-- Comparaison des durées
-- Comparaison des livrables
-- Carte mondiale des projets
-- Répartition par type de projet
-
----
-
-### 📄 Page 2 – Analyse détaillée
-
-Analyse projet par projet comprenant :
-
-- Budget prévu / réel
-- Durée prévue / réelle
-- Écart budgétaire (%)
-- Écart de durée (%)
-- Statut du projet
-- Indicateur de projet en alerte
-
-Des filtres permettent d'analyser les résultats par :
-
-- Pays
-- Région
-- Type de projet
-
----
-
-### 📄 Page 3 – Analyse géographique
-
-Analyse de la répartition des projets selon :
-
-- les pays
-- les régions
-- le budget réel
-- le nombre de projets
-- le type de projet
-
-Cette page permet d'identifier les zones nécessitant un suivi prioritaire.
-
----
-
-### 📄 Page 4 – Documentation
-
-Cette page regroupe :
-
-- le Product Strategy Canvas ;
-- les étapes de préparation des données ;
-- le modèle relationnel ;
-- la procédure de mise à jour du rapport ;
-- les recommandations stratégiques issues de l'analyse.
-
----
-
-## ⚙️ Préparation des données
-
-Les données ont été préparées dans **Power Query**.
-
-Les principales étapes sont :
-
-- Import des fichiers Excel
-- Vérification des en-têtes
-- Contrôle des types de données
-- Nettoyage des données
-- Suppression des doublons
-- Vérification des valeurs manquantes
-- Création des colonnes calculées
-- Création d'une clé composite (*Project_Phase*)
-- Chargement des données dans Power BI
-
-Toutes ces étapes sont enregistrées afin d'être automatiquement rejouées lors de chaque actualisation.
-
----
-
-## 🧩 Modélisation des données
-
-Le rapport repose sur un modèle relationnel composé de plusieurs tables reliées principalement grâce :
-
-- au **Project ID**
-- à la clé composite **Project_Phase**
-
-Cette modélisation permet :
-
-- d'éviter les doublons ;
-- d'améliorer les performances ;
-- de faciliter les calculs DAX ;
-- de réaliser des analyses croisées entre plusieurs tables.
-
----
-
-## 📐 Mesures DAX
-
-Plusieurs mesures DAX ont été développées, notamment :
-
-- Nombre de projets
-- Budget prévu
-- Budget réel
-- Écart budget
-- Écart budget (%)
-- Durée prévue
-- Durée réelle
-- Écart durée
-- Écart durée (%)
-- Livrables prévus
-- Livrables réels
-- Écart livrables
-- Nombre de projets en alerte
-
----
-
-## 💡 Résultats
-
-L'analyse met notamment en évidence :
-
-- des dépassements de budget sur certains projets ;
-- des retards de réalisation ;
-- des écarts sur les livrables ;
-- des différences de performance selon les pays et les régions.
-
-Le tableau de bord permet ainsi de prioriser les actions et d'améliorer le pilotage du portefeuille de projets.
-
----
-
-## 🔄 Mise à jour
-
-Le rapport a été conçu pour être facilement actualisé.
-
-Il suffit de :
-
-1. Remplacer le fichier Excel source.
-2. Ouvrir Power BI.
-3. Cliquer sur **Actualiser**.
-4. Les transformations Power Query sont automatiquement rejouées.
-5. Les indicateurs et visualisations sont mis à jour.
-
----
-
-## 🎓 Compétences développées
-
-- Business Intelligence
-- Data Visualisation
-- Power BI
-- Power Query
-- DAX
-- Modélisation relationnelle
-- Nettoyage de données
-- Storytelling Data
-- Analyse décisionnelle
-- Conception de tableaux de bord interactifs
-
----
-
+Business Data Analyst | Business Intelligence
+& Strategic Decision Support
